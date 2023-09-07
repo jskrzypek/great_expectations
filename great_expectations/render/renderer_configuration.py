@@ -21,7 +21,9 @@ from typing import (
 
 import dateutil
 from dateutil.parser import ParserError
-from pydantic import (
+from typing_extensions import TypeAlias, TypedDict
+
+from great_expectations.compatibility.pydantic import (
     BaseModel,
     Field,
     ValidationError,
@@ -29,9 +31,7 @@ from pydantic import (
     root_validator,
     validator,
 )
-from pydantic.generics import GenericModel
-from typing_extensions import TypeAlias, TypedDict
-
+from great_expectations.compatibility.pydantic import generics as pydantic_generics
 from great_expectations.core import (
     ExpectationConfiguration,  # noqa: TCH001
     ExpectationValidationResult,  # noqa: TCH001
@@ -39,7 +39,11 @@ from great_expectations.core import (
 from great_expectations.render.exceptions import RendererConfigurationError
 
 if TYPE_CHECKING:
-    from pydantic.typing import AbstractSetIntStr, DictStrAny, MappingIntStrAny
+    from great_expectations.compatibility.pydantic.typing import (
+        AbstractSetIntStr,
+        DictStrAny,
+        MappingIntStrAny,
+    )
 
 
 class RendererValueType(str, Enum):
@@ -129,7 +133,7 @@ class MetaNotes(TypedDict):
     content: List[str]
 
 
-class RendererConfiguration(GenericModel, Generic[RendererParams]):
+class RendererConfiguration(pydantic_generics.GenericModel, Generic[RendererParams]):
     """
     Configuration object built for each renderer. Operations to be performed strictly on this object at the renderer
         implementation-level.

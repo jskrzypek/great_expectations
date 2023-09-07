@@ -16,9 +16,9 @@ from typing import (
     Type,
 )
 
-import pydantic
 from typing_extensions import Literal
 
+from great_expectations.compatibility import pydantic
 import great_expectations.exceptions as gx_exceptions
 from great_expectations.core.batch_spec import PandasBatchSpec
 from great_expectations.experimental.datasources.dynamic_pandas import (

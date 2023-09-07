@@ -8,12 +8,12 @@ from dataclasses import dataclass
 from pprint import pformat as pf
 from typing import TYPE_CHECKING, Any, Type
 
-import pydantic
 import pytest
 from pytest import MonkeyPatch, param
 
 import great_expectations.exceptions as ge_exceptions
 import great_expectations.execution_engine.pandas_execution_engine
+from great_expectations.compatibility import pydantic
 from great_expectations.experimental.datasources.dynamic_pandas import PANDAS_VERSION
 from great_expectations.experimental.datasources.filesystem_data_asset import (
     _FilesystemDataAsset,

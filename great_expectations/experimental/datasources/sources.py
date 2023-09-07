@@ -18,8 +18,7 @@ from great_expectations.experimental.datasources.signatures import _merge_signat
 from great_expectations.experimental.datasources.type_lookup import TypeLookup
 
 if TYPE_CHECKING:
-    import pydantic
-
+    from great_expectations.compatibility import pydantic
     from great_expectations.data_context import AbstractDataContext as GXDataContext
     from great_expectations.datasource import BaseDatasource, LegacyDatasource
     from great_expectations.experimental.context import DataContext

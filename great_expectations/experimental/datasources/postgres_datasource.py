@@ -1,6 +1,6 @@
-from pydantic import PostgresDsn
 from typing_extensions import Literal
 
+from great_expectations.compatibility.pydantic import PostgresDsn
 from great_expectations.experimental.datasources.sql_datasource import SQLDatasource
 
 

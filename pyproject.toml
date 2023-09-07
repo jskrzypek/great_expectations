@@ -272,6 +272,15 @@ max-complexity = 15
 [tool.ruff.pydocstyle]
 convention = "google"
 
+[tool.ruff.flake8-tidy-imports]
+[tool.ruff.flake8-tidy-imports.banned-api]
+"typing_extensions.override".msg = "Do not import typing_extensions.override directly, import `override` from great_expectations.compatibility.typing_extensions instead."
+# TODO: remove pydantic once our min version is pydantic v2
+"pydantic".msg = "Please do not import pydantic directly, import from great_expectations.compatibility.pydantic instead."
+
+
+# -----------------------------------------------------------------
+
 [tool.pytest.ini_options]
 filterwarnings = [
     # This warning is common during testing where we intentionally use a COMPLETE format even in cases that would
