@@ -5,9 +5,9 @@ import re
 from pprint import pformat as pf
 from typing import Callable, List
 
-import pydantic
 import pytest
 
+from great_expectations.compatibility import pydantic
 from great_expectations.data_context import FileDataContext
 from great_expectations.experimental.datasources.config import GxConfig
 from great_expectations.experimental.datasources.interfaces import Datasource

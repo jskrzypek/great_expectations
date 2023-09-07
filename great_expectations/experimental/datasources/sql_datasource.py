@@ -15,9 +15,9 @@ from typing import (
     cast,
 )
 
-import pydantic
 from typing_extensions import Literal
 
+from great_expectations.compatibility import pydantic
 import great_expectations.exceptions as gx_exceptions
 from great_expectations.core.batch_spec import SqlAlchemyDatasourceBatchSpec
 from great_expectations.experimental.datasources.experimental_base_model import (

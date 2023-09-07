@@ -5,8 +5,7 @@ import pathlib
 from pprint import pformat as pf
 from typing import TYPE_CHECKING, ClassVar, Dict, Optional, Union
 
-from pydantic import DirectoryPath, validate_arguments
-
+from great_expectations.compatibility.pydantic import DirectoryPath, validate_arguments
 from great_expectations.experimental.datasources.config import GxConfig
 from great_expectations.experimental.datasources.sources import _SourceFactories
 

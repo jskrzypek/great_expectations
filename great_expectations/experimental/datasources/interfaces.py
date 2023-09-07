@@ -22,10 +22,17 @@ from typing import (
 )
 
 import pandas as pd
-import pydantic
-from pydantic import Field, StrictBool, StrictInt, root_validator, validate_arguments
-from pydantic import dataclasses as pydantic_dc
 from typing_extensions import TypeAlias, TypeGuard
+
+from great_expectations.compatibility import pydantic
+from great_expectations.compatibility.pydantic import (
+    Field,
+    StrictBool,
+    StrictInt,
+    root_validator,
+    validate_arguments,
+)
+from great_expectations.compatibility.pydantic import dataclasses as pydantic_dc
 
 from great_expectations.core.id_dict import BatchSpec  # noqa: TCH001
 from great_expectations.experimental.datasources.constants import _FIELDS_ALWAYS_SET

@@ -7,8 +7,7 @@ import logging
 from pprint import pformat as pf
 from typing import TYPE_CHECKING, Set, Type
 
-import pydantic
-
+from great_expectations.compatibility.pydantic import ModelMetaclass
 from great_expectations.experimental.datasources.sources import _SourceFactories
 
 if TYPE_CHECKING:
@@ -18,7 +17,7 @@ if TYPE_CHECKING:
 logger = logging.getLogger(__name__)
 
 
-class MetaDatasource(pydantic.main.ModelMetaclass):
+class MetaDatasource(ModelMetaclass):
 
     __cls_set: Set[Type] = set()
 

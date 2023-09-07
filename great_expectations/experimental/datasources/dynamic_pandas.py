@@ -27,11 +27,12 @@ from typing import (
 )
 
 import pandas as pd
-import pydantic
 from packaging.version import Version
-from pydantic import Field, FilePath
 
-# from pydantic.typing import resolve_annotations
+from great_expectations.compatibility import pydantic
+from great_expectations.compatibility.pydantic import Field, FilePath
+
+# from great_expectations.compatibility.pydantic.typing import resolve_annotations
 from typing_extensions import Final, Literal, TypeAlias
 
 from great_expectations.experimental.datasources.interfaces import (

@@ -1,8 +1,8 @@
 from __future__ import annotations
 
-import pydantic
 from typing_extensions import Literal
 
+from great_expectations.compatibility import pydantic
 from great_expectations.experimental.datasources.sql_datasource import SQLDatasource
 
 

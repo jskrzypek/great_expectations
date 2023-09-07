@@ -1,4 +1,5 @@
 """POC for loading config."""
+
 from __future__ import annotations
 
 import logging
@@ -6,9 +7,14 @@ import pathlib
 from pprint import pformat as pf
 from typing import TYPE_CHECKING, Dict, List, Type, Union
 
-from pydantic import Extra, Field, ValidationError, validator
 from typing_extensions import Final
 
+from great_expectations.compatibility.pydantic import (
+    Extra,
+    Field,
+    ValidationError,
+    validator,
+)
 from great_expectations.experimental.datasources.experimental_base_model import (
     ExperimentalBaseModel,
 )
@@ -18,7 +24,9 @@ from great_expectations.experimental.datasources.interfaces import (
 from great_expectations.experimental.datasources.sources import _SourceFactories
 
 if TYPE_CHECKING:
-    from pydantic.error_wrappers import ErrorDict as PydanticErrorDict
+    from great_expectations.compatibility.pydantic.error_wrappers import (
+        ErrorDict as PydanticErrorDict,
+    )
 
 
 logger = logging.getLogger(__name__)

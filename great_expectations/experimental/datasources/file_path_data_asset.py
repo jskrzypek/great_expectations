@@ -18,8 +18,7 @@ from typing import (
     Union,
 )
 
-import pydantic
-
+from great_expectations.compatibility import pydantic
 import great_expectations.exceptions as gx_exceptions
 from great_expectations.experimental.datasources.data_asset.data_connector.regex_parser import (
     RegExParser,

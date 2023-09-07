@@ -1,8 +1,8 @@
 import pathlib
 
 import pytest
-from pydantic import ValidationError
 
+from great_expectations.compatibility.pydantic import ValidationError
 from great_expectations.experimental.datasources import SqliteDatasource
 from great_expectations.experimental.datasources.sqlite_datasource import SqliteDsn
 
